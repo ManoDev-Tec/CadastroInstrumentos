@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Instrumentos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Instrumentos Musicais Cadastrados</h1>
+
+    <a href="/instrumentos/novo">Cadastrar novo instrumento</a>
+
+    <br><br>
+
+    <% if (instrumentos.length> 0) { %>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Preço</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% instrumentos.forEach((instrumento)=> { %>
+
+                    <tr>
+
+                        <td>
+                            <%= instrumento.nome %>
+                        </td>
+
+                        <td>
+                            <%= instrumento.fabricante %>
+                        </td>
+
+                        <td>
+                            R$ <%= Number(instrumento.preco).toFixed(2) %>
+                        </td>
+
+                        <td>
+                            <%= instrumento.tipo %>
+                        </td>
+
+                    </tr>
+
+                    <% }); %>
+
+            </tbody>
+
+        </table>
+
+        <% } else { %>
+
+            <p>Nenhum instrumento cadastrado.</p>
+
+            <% } %>
+
+                <br>
+
+                <a href="/">Voltar para página inicial</a>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Instrumento</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Cadastro de Instrumentos Musicais</h1>
+
+    <form action="/instrumentos" method="POST">
+
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label>Fabricante:</label>
+        <input type="text" name="fabricante" required>
+
+        <label>Preço:</label>
+        <input type="number" name="preco" step="0.01" min="0" required>
+
+        <label>Tipo:</label>
+        <select name="tipo" required>
+
+            <option value="">Selecione</option>
+            <option value="Corda">Corda</option>
+            <option value="Sopro">Sopro</option>
+            <option value="Percussão">Percussão</option>
+            <option value="Teclado">Teclado</option>
+
+        </select>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Página inicial</a>
+
+    <br><br>
+
+    <a href="/instrumentos">Ver instrumentos cadastrados</a>
+
+</body>
+
+</html>
